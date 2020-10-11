@@ -1,2 +1,4 @@
 kiki-venv
 .vscode
+kiki.egg-info
+__pycache__
