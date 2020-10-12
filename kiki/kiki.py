@@ -1,3 +1,4 @@
+import os
 import typer
 
 
@@ -10,7 +11,11 @@ def main(
     Example Documentation
     """
 
-    typer.echo(f'PDF: {pdf}\tFILENAME: {filename}')
+    # check if pdf is file or url
+    if os.path.isfile(pdf):
+        typer.echo(f'{pdf} is a file')
+    else:
+        typer.echo(f'{pdf} is not file')
 
 
 if __name__ == '__main__':
