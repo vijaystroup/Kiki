@@ -1,12 +1,13 @@
 from PyPDF2 import PdfFileReader
+from typer import progressbar
 
 
 def file_pdf(file_name: str):
-    pdf = PdfFileReader(file_name)
+    pdf = PdfFileReader(file_name, strict=False)
 
-    for page in range(pdf.getNumPages()):
-        print(pdf.getPage(page).extractText())
-        print()
+    with progressbar(length=pdf.getNumPages(), label='Downloading') as progress:
+        for page in progress:
+            text = pdf.getPage(page).extractText()
 
 
-file_pdf('/mnt/d/sample.pdf')
+file_pdf('/mnt/c/Users/Vijay/Downloads/thermalphysics-2ed-Blundell.pdf')
