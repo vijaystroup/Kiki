@@ -1,8 +1,15 @@
 import typer
 
 
-def main():
-    typer.echo("Hola World")
+def main(
+    name: str = typer.Argument(...)
+):
+    """
+    Kiki\n
+    Example Documentation
+    """
+
+    typer.echo(f"Hello {name}")
 
 
 if __name__ == "__main__":
