@@ -40,5 +40,7 @@ def url_pdf(url, file_out):
             remove(file_name)
         else:
             error_message(f'{url} is invalid.')
-    except TimeoutError as e:
+    except requests.exceptions.Timeout:
         error_message(f'Request for {url} timed out.')
+    except requests.exceptions.RequestException as e:
+        error_message(f'Request for {url} is invalid.')
