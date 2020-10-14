@@ -9,10 +9,18 @@ def get_requirements():
 
 setup(
     name = 'kiki',
-    version = '0.1',
+    version = '1.0',
+    description = 'pdf text-to-speech',
+    author = 'Vijay Stroup',
+    url = 'https://github.com/VijayStroup/Kiki',
     packages = find_packages(),
     include_package_data = True,
     install_requires = get_requirements(),
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
     entry_points = """
         [console_scripts]
         kiki = kiki.kiki:main
