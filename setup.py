@@ -14,7 +14,7 @@ def get_long_desc():
 
 setup(
     name = 'kiki',
-    version = '1.0',
+    version = '1.0.1',
     description = 'pdf text-to-speech',
     long_description = get_long_desc(),
     long_description_content_type = 'text/markdown',
