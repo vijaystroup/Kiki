@@ -3,7 +3,7 @@ from gtts import gTTS
 from PyPDF2 import PdfFileReader
 from typer import progressbar
 import requests
-from utils import error_message
+from .utils import error_message
 
 
 def download(pdf, file_out):
