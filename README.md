@@ -9,7 +9,7 @@ Kiki will transform your PDFs into audio files for you to listen to.
 - Python 3 pip
 
 ```bash
-$ pip install keke
+$ pip install kiki
 ```
 
 ## Usage
