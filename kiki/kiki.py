@@ -1,7 +1,7 @@
 import os
 import typer
-from utils import error_message
-import pdf_handler as pdfh
+from .utils import error_message
+from .pdf_handler import file_pdf, url_pdf
 
 app = typer.Typer(add_completion=False)
 
@@ -27,12 +27,12 @@ def get(
 
     # check if pdf is file or url
     if os.path.isfile(pdf):
-        pdfh.file_pdf(pdf, filename)
+        file_pdf(pdf, filename)
     else:
-        pdfh.url_pdf(pdf, filename)
+        url_pdf(pdf, filename)
 
     typer.echo(f'Your audio file is now available at {filename}.mp3')
 
 
-if __name__ == '__main__':
+def main():
     app()
