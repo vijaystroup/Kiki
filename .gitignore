@@ -3,3 +3,5 @@ kiki-venv
 kiki.egg-info
 __pycache__
 *.mp3
+build
+dist
