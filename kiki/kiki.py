@@ -1,10 +1,6 @@
 import os
 import typer
-
-
-def error_message(description: str):
-    typer.echo(f'Usage: kiki.py [OPTIONS] PDF\nTry \'kiki.py --help\' for help.\n\n{description}')
-
+from utils import error_message
 
 def main(
     pdf: str = typer.Argument(..., help='url or file of pdf'),
@@ -17,8 +13,7 @@ def main(
 
     # check to make sure pdf arg is a pdf file
     if not pdf[-3:] == 'pdf':
-        error_message(f'Error: Invalid file \'{pdf}\'. Must be a pdf file.')
-        raise typer.Exit()
+        error_message(f"Invalid file '{pdf}'. Must be a pdf file.")
 
     # check if pdf is file or url
     if os.path.isfile(pdf):
