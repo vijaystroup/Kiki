@@ -3,15 +3,23 @@ import typer
 from utils import error_message
 import pdf_handler as pdfh
 
+app = typer.Typer(add_completion=False)
 
-def main(
+
+@app.command('github')
+def github():
+    """open github repo for Kiki"""
+
+    typer.echo('Opening GitHub Repo...')
+    typer.launch('https://github.com/VijayStroup/Kiki')
+
+
+@app.command('get')
+def get(
     pdf: str = typer.Argument(..., help='url or file of pdf'),
     filename: str = typer.Option('kiki', help='name of output file without extension')
 ):
-    """
-    Kiki\n
-    Example Documentation
-    """
+    """get audio from pdf"""
 
     # check to make sure pdf arg is a pdf file
     if not pdf[-3:] == 'pdf':
@@ -27,4 +35,4 @@ def main(
 
 
 if __name__ == '__main__':
-    typer.run(main)
+    app()
