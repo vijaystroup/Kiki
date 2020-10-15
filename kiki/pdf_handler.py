@@ -26,7 +26,7 @@ def file_pdf(file_name, file_out):
 
 
 def url_pdf(url, file_out):
-    """make pdf object from beautifulsoup and download audio"""
+    """make temp pdf file and download audio"""
 
     file_name = 'kiki_temp.pdf'
 
